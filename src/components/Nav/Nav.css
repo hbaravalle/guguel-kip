@@ -1,0 +1,54 @@
+@layer components {
+    .nav {
+        padding: var(--space-lg) var(--space-md) 0;
+    }
+
+    .nav__home {
+        display: inline-block;
+        margin-bottom: var(--space-xl);
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xs);
+        list-style: none;
+    }
+
+    .nav__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-sm);
+        color: var(--color-text-primary);
+        border-radius: var(--radius-full);
+        transition:
+            background-color var(--duration-fast) var(--ease-out),
+            box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .nav__link:hover {
+        background-color: var(--color-bg-surface-hover);
+    }
+
+    .nav__label {
+        position: absolute;
+        left: 100%;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity var(--duration-base) var(--ease-out);
+        pointer-events: none;
+    }
+
+    .nav__link:hover .nav__label,
+    .nav__link:focus-visible .nav__label {
+        opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .nav__link {
+            transition: none;
+        }
+    }
+}
