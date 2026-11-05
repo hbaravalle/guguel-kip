@@ -1,0 +1,161 @@
+{
+    "$schema": "https://json.schemastore.org/stylelintrc",
+    "extends": ["stylelint-config-standard"],
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "selector-class-pattern": [
+            "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$",
+            { "message": "Usá BEM: bloque, bloque__elemento o bloque--modificador (en kebab-case)" }
+        ],
+        "import-notation": "string",
+        "declaration-empty-line-before": null,
+        "custom-property-empty-line-before": null,
+        "value-keyword-case": ["lower", { "ignoreProperties": ["font-family", "/^--font-/"] }],
+        "rule-empty-line-before": [
+            "always",
+            { "except": ["first-nested"], "ignore": ["after-comment"] }
+        ],
+
+        "order/order": ["custom-properties", "declarations", "rules", "at-rules"],
+        "order/properties-order": [
+            [
+                {
+                    "groupName": "posición",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": ["position", "inset", "top", "right", "bottom", "left", "z-index"]
+                },
+                {
+                    "groupName": "layout",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": [
+                        "display",
+                        "grid-area",
+                        "grid-template",
+                        "grid-template-areas",
+                        "grid-template-columns",
+                        "grid-template-rows",
+                        "grid-auto-flow",
+                        "grid-auto-columns",
+                        "grid-auto-rows",
+                        "grid-column",
+                        "grid-row",
+                        "flex",
+                        "flex-direction",
+                        "flex-wrap",
+                        "flex-grow",
+                        "flex-shrink",
+                        "flex-basis",
+                        "order",
+                        "place-content",
+                        "place-items",
+                        "place-self",
+                        "align-content",
+                        "align-items",
+                        "align-self",
+                        "justify-content",
+                        "justify-items",
+                        "justify-self",
+                        "gap",
+                        "row-gap",
+                        "column-gap"
+                    ]
+                },
+                {
+                    "groupName": "caja",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": [
+                        "box-sizing",
+                        "width",
+                        "min-width",
+                        "max-width",
+                        "height",
+                        "min-height",
+                        "max-height",
+                        "aspect-ratio",
+                        "margin",
+                        "margin-block",
+                        "margin-inline",
+                        "margin-top",
+                        "margin-right",
+                        "margin-bottom",
+                        "margin-left",
+                        "padding",
+                        "padding-block",
+                        "padding-inline",
+                        "padding-top",
+                        "padding-right",
+                        "padding-bottom",
+                        "padding-left",
+                        "overflow",
+                        "overflow-x",
+                        "overflow-y"
+                    ]
+                },
+                {
+                    "groupName": "tipografía",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": [
+                        "color",
+                        "font",
+                        "font-family",
+                        "font-size",
+                        "font-weight",
+                        "font-style",
+                        "line-height",
+                        "letter-spacing",
+                        "text-align",
+                        "text-decoration",
+                        "text-transform",
+                        "text-overflow",
+                        "white-space",
+                        "list-style"
+                    ]
+                },
+                {
+                    "groupName": "visual",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": [
+                        "background",
+                        "background-color",
+                        "background-image",
+                        "border",
+                        "border-top",
+                        "border-right",
+                        "border-bottom",
+                        "border-left",
+                        "border-color",
+                        "border-width",
+                        "border-style",
+                        "border-radius",
+                        "outline",
+                        "outline-offset",
+                        "box-shadow",
+                        "opacity"
+                    ]
+                },
+                {
+                    "groupName": "movimiento e interacción",
+                    "emptyLineBefore": "never",
+                    "noEmptyLineBetween": true,
+                    "properties": [
+                        "transform",
+                        "transition",
+                        "animation",
+                        "cursor",
+                        "pointer-events",
+                        "user-select"
+                    ]
+                }
+            ],
+            {
+                "unspecified": "bottomAlphabetical",
+                "emptyLineBeforeUnspecified": "never"
+            }
+        ]
+    }
+}

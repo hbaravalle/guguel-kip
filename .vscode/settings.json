@@ -1,0 +1,22 @@
+{
+    // Format on save
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "prettier.requireConfig": true,
+    // Override per-language user settings
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Lint fixes on save (oxc, stylelint extensions)
+    "editor.codeActionsOnSave": {
+        "source.fixAll.oxc": "explicit",
+        "source.fixAll.stylelint": "explicit"
+    },
+    "stylelint.validate": ["css"],
+    // Stylelint handles CSS validation
+    "css.validate": false
+}

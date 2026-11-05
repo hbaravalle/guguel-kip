@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc",
+    "printWidth": 100,
+    "tabWidth": 4,
+    "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+    "importOrder": [
+        "<BUILTIN_MODULES>",
+        "^react$",
+        "^react-dom(/.*)?$",
+        "<THIRD_PARTY_MODULES>",
+        "",
+        "^@/(.*)$",
+        "",
+        "^[./]"
+    ],
+    "importOrderTypeScriptVersion": "5.0.0"
+}

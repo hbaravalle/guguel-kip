@@ -1,0 +1,25 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["react", "typescript", "oxc"],
+    "jsPlugins": ["eslint-plugin-perfectionist"],
+    "rules": {
+        "react/rules-of-hooks": "error",
+        "react/only-export-components": ["warn", { "allowConstantExport": true }],
+        "perfectionist/sort-jsx-props": [
+            "warn",
+            {
+                "type": "alphabetical",
+                "customGroups": [
+                    { "groupName": "identity", "elementNamePattern": "^(key|ref|id)$" },
+                    { "groupName": "style", "elementNamePattern": "^(className|style)$" },
+                    {
+                        "groupName": "semantics",
+                        "elementNamePattern": "^(type|role|href|to|end|src|alt|htmlFor|name)$"
+                    },
+                    { "groupName": "events", "elementNamePattern": "^on[A-Z]" }
+                ],
+                "groups": ["identity", "style", "semantics", "unknown", "events"]
+            }
+        ]
+    }
+}
