@@ -1,0 +1,7 @@
+@layer base, components, utilities;
+
+@import "@fontsource-variable/inter";
+@import "@fontsource/cascadia-mono";
+@import "./tokens.css";
+@import "./base.css" layer(base);
+@import "./utilities.css" layer(utilities);

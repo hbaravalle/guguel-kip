@@ -1,0 +1,21 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-canvas);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: 600;
+}
