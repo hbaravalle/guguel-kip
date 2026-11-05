@@ -1,0 +1,7 @@
+@layer components {
+    .notes-page {
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--space-xl);
+    }
+}

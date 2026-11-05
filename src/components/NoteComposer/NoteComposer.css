@@ -1,0 +1,106 @@
+@layer components {
+    .note-composer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: var(--space-sm);
+        width: min(600px, 100%);
+        margin-inline: auto;
+        padding: var(--space-sm);
+        background-color: var(--color-bg-surface);
+        border-radius: var(--radius-md);
+        box-shadow: var(--elevation-card-hover);
+        transition: box-shadow var(--duration-base) var(--ease-out);
+    }
+
+    .note-composer--expanded {
+        box-shadow: var(--elevation-popover);
+    }
+
+    .note-composer:focus-within {
+        box-shadow: var(--elevation-popover);
+    }
+
+    .note-composer > * {
+        width: 100%;
+    }
+
+    .note-composer__title,
+    .note-composer__body {
+        width: 100%;
+        padding: var(--space-2xs);
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .note-composer__title {
+        font: var(--type-note-title);
+    }
+
+    .note-composer__body {
+        font: var(--type-ui-label);
+    }
+
+    .note-composer__footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .note-composer__colors {
+        display: flex;
+        column-gap: var(--space-xs);
+        padding: var(--space-2xs);
+        border: none;
+    }
+
+    .color-swatch {
+        display: grid;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: var(--radius-full);
+        cursor: pointer;
+    }
+
+    .color-swatch:has(input:focus-visible) {
+        outline: 2px solid var(--color-action-primary);
+        outline-offset: 2px;
+    }
+
+    .color-swatch__check {
+        width: 16px;
+        height: 16px;
+        opacity: 0;
+    }
+
+    .color-swatch:has(input:checked) .color-swatch__check {
+        opacity: 1;
+    }
+
+    .color-swatch--yellow {
+        background-color: var(--color-note-yellow-bg);
+    }
+
+    .color-swatch--blue {
+        background-color: var(--color-note-blue-bg);
+    }
+
+    .color-swatch--red {
+        background-color: var(--color-note-red-bg);
+    }
+
+    .color-swatch--paper {
+        background-color: var(--color-note-paper-bg);
+        border: 2px solid var(--color-border-subtle);
+    }
+
+    .note-composer__actions {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: var(--space-xs);
+        padding: var(--space-2xs);
+    }
+}

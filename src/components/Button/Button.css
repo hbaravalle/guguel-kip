@@ -1,0 +1,44 @@
+@layer components {
+    .button {
+        padding: var(--space-xs) var(--space-md);
+        font: var(--type-ui-button);
+        border: none;
+        border-radius: var(--radius-md);
+        transition: background-color var(--duration-fast) var(--ease-out);
+        cursor: pointer;
+    }
+
+    .button:focus-visible {
+        outline: 2px solid var(--color-action-primary);
+        outline-offset: 2px;
+    }
+
+    .button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .button--primary {
+        color: var(--color-text-on-dark);
+        background-color: var(--color-action-primary);
+    }
+
+    .button--primary:hover:not(:disabled) {
+        background-color: var(--color-action-primary-hover);
+    }
+
+    .button--ghost {
+        color: var(--color-text-primary);
+        background-color: transparent;
+    }
+
+    .button--ghost:hover:not(:disabled) {
+        background-color: var(--color-bg-surface-hover);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .button {
+            transition: none;
+        }
+    }
+}
